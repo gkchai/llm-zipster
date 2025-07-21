@@ -2,6 +2,8 @@
 
 LLMZipster is a compressor and decompressor utility that uses arithmetic coding with LLM next token probabilities to compress and decompress text. 
 
+![LLMZipster Demo](t-rec_1.gif)
+
 ## Usage
 
 ### Command Line
@@ -13,12 +15,7 @@ python llm_zipster.py --compress --input input.txt --output compressed.b64
 
 #### Compress a string:
 ```bash
-python llm_zipster.py --compress --text "Hello, world!" --output compressed.b64
-```
-
-#### Decompress to a file:
-```bash
-python llm_zipster.py --decompress --input compressed.b64 --output output.txt
+python llm_zipster.py --compress --text "The cat sat on the mat and purred." --output compressed.b64
 ```
 
 #### Decompress and print to stdout:
@@ -26,11 +23,7 @@ python llm_zipster.py --decompress --input compressed.b64 --output output.txt
 python llm_zipster.py --decompress --input compressed.b64
 ```
 
-#### Additional options:
-- `--num-bits N` : Set the number of bits for arithmetic coding (default: 512)
-- `--no-progress` : Hide the progress bar
-
-### Python API
+### Python
 
 ```python
 from llm_zipster import LLMZipster
@@ -45,3 +38,8 @@ zipster = LLMZipster(verbose=True, num_bits=512)
 compressed = zipster.compress(data)
 decompressed = zipster.decompress(compressed)
 ```
+
+## References
+
+- [Language Modeling Is Compression (arXiv:2309.10668)](https://arxiv.org/abs/2309.10668)
+- [llama-zip: LLM-powered lossless compression tool (GitHub)](https://github.com/AlexBuz/llama-zip)
