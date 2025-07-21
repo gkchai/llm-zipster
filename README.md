@@ -2,7 +2,7 @@
 
 LLMZipster is a compressor and decompressor utility that uses arithmetic coding with LLM next token probabilities to compress and decompress text. 
 
-![LLMZipster Demo](t-rec_1.gif)
+![LLMZipster Demo](example.gif)
 
 ## Usage
 
